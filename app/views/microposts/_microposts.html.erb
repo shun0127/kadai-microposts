@@ -14,8 +14,8 @@
                     <%= link_to "Message_Delete", micropost, method: :delete, data:{confirm:"You sure?"}, class:"btn btn-danger btn-sm" %>
                 <% end %>
                 <% unless current_user == micropost.user %>
-                    <% message_from = "from_micropost"%> 
-                    <%= render "favorites/favorites_button", favorite: micropost, message_from: message_from %>
+                    <% call_favorite_from=call_from %>
+                    <%= render "favorites/favorites_button", favorite: micropost, call_favorite_from: call_favorite_from %>
                 <% end %>
                </div>
         </div>

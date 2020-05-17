@@ -45,6 +45,7 @@
         </a>
       </li>
     </ul>
-    <%= render "microposts/microposts" , microposts: @microposts %>
+    <% call_from = "from_show"%> 
+    <%= render "microposts/microposts" , microposts: @microposts,call_from: call_from %>
   </div>
 </div>

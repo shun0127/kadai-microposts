@@ -9,7 +9,8 @@
       <% end %>
     </aside>
     <div class="col-sm-8">
-      <%= render "microposts/microposts",microposts: @microposts%>
+       <% call_from = "from_index"  %> 
+      <%= render "microposts/microposts",microposts: @microposts ,call_from: call_from %>
     </div>
   </div>
 

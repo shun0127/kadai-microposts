@@ -13,10 +13,13 @@ class FavoritesController < ApplicationController
     micropost_user = User.find(rm_micropost.user_id)
     current_user.rm_favorite(rm_micropost)
     flash[:success]="お気に入りから削除しました。"
-    if params[:message_from] == "from_micropost"
+#binding.pry
+    if params[:call_favorite_from] == "from_show"
       redirect_to micropost_user
-    elsif params[:message_from] == "from_favorites_list"
+    elsif params[:call_favorite_from] == "from_favorites_list"
       redirect_to likes_user_path(current_user)
+    elsif params[:call_favorite_from] == "from_index"
+      redirect_to root_url
     else
       redirect_to root_url
     end
