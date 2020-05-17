@@ -11,9 +11,12 @@
             </div>
             <div>
                 <% if current_user == micropost.user %>
-                    <%= link_to "Delete", micropost, method: :delete, data:{confirm:"You sure?"}, class:"btn btn-danger btn-sm" %>
+                    <%= link_to "Message_Delete", micropost, method: :delete, data:{confirm:"You sure?"}, class:"btn btn-danger btn-sm" %>
                 <% end %>
-            </div>
+                <% unless current_user == micropost.user %>
+                    <%= render "favorites/favorites_button", favorite: micropost %>
+                <% end %>
+               </div>
         </div>
     </li>
     <% end %>
