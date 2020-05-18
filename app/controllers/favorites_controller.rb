@@ -4,6 +4,7 @@ class FavoritesController < ApplicationController
     add_micropost = Micropost.find(params[:micropost_id])
     micropost_user = User.find(add_micropost.user_id)
     current_user.add_favorite(add_micropost)
+#binding.pry
     flash[:success] = "お気に入りに追加しました。"
     if params[:call_favorite_from] == "from_show"
       redirect_to micropost_user

@@ -45,7 +45,7 @@
         </a>
       </li>
     </ul>
-
-    <%= render "favorites/favorites_list" , favorites: @favorites %>
+    <% call_from = "from_favorites_list"%> 
+    <%= render "microposts/microposts" , microposts: @microposts ,call_from: call_from %>
   </div>
 </div>
