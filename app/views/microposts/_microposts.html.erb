@@ -11,7 +11,7 @@
             </div>
             <% call_favorite_from=call_from %>
             <div class="mb-1">
-                <% if call_favorite_from == "from_index" %>
+                <% unless call_favorite_from == "from_favorites_list" %>
                     <% if current_user == micropost.user %>
                         <%= link_to "Message_Delete", micropost, method: :delete, data:{confirm:"You sure?"}, class:"btn btn-danger btn-sm" %>
                     <% end %>
